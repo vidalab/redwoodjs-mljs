@@ -8,8 +8,10 @@
   "dependencies": {
     "@redwoodjs/router": "^0.15.3",
     "@redwoodjs/web": "^0.15.3",
+    "d3-time-format": "^2.2.3",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "vidajs": "^0.0.23"
   }
 }
