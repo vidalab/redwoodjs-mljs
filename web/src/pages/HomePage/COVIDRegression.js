@@ -10,28 +10,6 @@ class COVIDRegression extends React.Component {
     }
   }
 
-  dlLinearRegression(data) {
-    var mapData = data;
-    // perform linear regression analysis
-    // variable lin contains the model
-    var lin = dl.linearRegression(mapData,
-      function(d) {
-        return d.date;
-      },
-      function(d) {
-        return d.positiveIncrease;
-      }
-    );
-    console.log(lin)
-    // use equation to calculate result data points
-    // y = slope * x + intercept
-    mapData.forEach(function(d) {
-      d.predictPositiveIncrease = lin.slope * d.date + lin.intercept;
-    })
-
-    return mapData;
-  }
-
   calculateRegression(json) {
     let tf = timeFormat("%s")
     let tp = timeParse("%Y%m%d")
@@ -61,8 +39,8 @@ class COVIDRegression extends React.Component {
 
   render() {
     let vizJson = {
-      "name": "Redwood Viz",
-      "description": "Example Viz",
+      "name": "US COVID-19 Positive Increase with ml.js Linear Regression",
+      "description": "Data from @COVIDTracking Project",
       "columns": 2,
       "rows": 1,
       "data": [
@@ -74,7 +52,7 @@ class COVIDRegression extends React.Component {
       "charts": [
         {
           "type": "line", "data": "covid-data",
-          "title": "US COVID-19 Positive Increase",
+          "title": "US COVID-19 Positive Increase with ml.js Linear Regression",
           "position": {
             "columns": 2,
             "rows": 1,
