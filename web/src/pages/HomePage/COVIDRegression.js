@@ -29,7 +29,7 @@ class COVIDRegression extends React.Component {
 
   componentDidMount() {
     // fetch data from the COVID Tracking Project
-    fetch('https://covidtracking.com/api/v1/us/daily.json')
+    fetch('https://api.covidtracking.com/api/v1/us/daily.json')
       .then(async (response) => {
         let json = await response.json()
         json = json.reverse()
